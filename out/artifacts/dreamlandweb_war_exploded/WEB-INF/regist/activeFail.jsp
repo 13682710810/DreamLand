@@ -61,9 +61,6 @@
         .foot-nav-col a:link,a:visited { color:grey;}
         .foot-nav-col a:hover,a:active { color: #6318ff;}
 
-        .foot-nav-col{
-            float: left;
-        }
     </style>
 </head>
 <body>
@@ -72,151 +69,21 @@
         <span style="color: white;font-family: Arial;font-size: 18px">Dreamland - 梦境网激活失败页面</span>
     </div>
     <div class="content">
-        <div class="single-clear">
-
-        </div>
-
+        <div class="single-clear"></div>
         <div class="active-success">
             <i class="icon-2x icon-times" style="color: red;"></i>&nbsp;&nbsp;&nbsp;<span style="font-size: 25px;color: red">抱歉,激活失败！</span><br/>
-
         </div>
         <div style="margin-left: 390px"> <span style="font-size: 17px;">${fail}</span></div>
         <div style="margin-left: 420px;margin-top: 40px">
             <button class="btn btn-primary" type="button"  id="btn" style="width: 150px">点此注册</button>
         </div>
-
-
     </div>
-
-
-    <div class="foot" style="position: absolute;left: 280px;float: left;margin-top: 40px">
-        <div class="foot-nav clearfix">
-            <div class="foot-nav-col">
-                <h3>
-                    关于
-                </h3>
-                <ul>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            关于梦境网
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            加入我们
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            联系方式
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot-nav-col">
-                <h3>
-                    帮助
-                </h3>
-                <ul>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            在线反馈
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            用户协议
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            隐私政策
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot-nav-col">
-                <h3>
-                    下载
-                </h3>
-                <ul>
-                    <li>
-                        <a href="#"
-                           target="_blank" rel="external nofollow">
-                            Android 客户端
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="external nofollow">
-                            iPhone 客户端
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot-nav-col">
-                <h3>
-                    关注
-                </h3>
-                <ul>
-                    <li>
-                        <a href="http://www.dreamland.wang" onMouseOut="hideImg()"  onmouseover="showImg()">
-                            微信
-                            <div id="wxImg" style="display:none;height:50px;back-ground:#f00;position:absolute;">
-                                <img src="images/dreamland.png"/><br/>
-                                手机扫描二维码关注
-                            </div>
-                            <!-- <div class="foot-wechat-tips">
-                                &lt;!&ndash; <span class="foot-wechat-icon"></span>&ndash;&gt;
-                                 <span class=" icon icon-wechat icon-2x"></span>
-                                 手机扫描二维码关注
-                             </div>-->
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="external nofollow">
-                            新浪微博
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="external nofollow">
-                            QQ空间
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- rgba(60,63,65,0.31)-->
-        <hr style="position: absolute;background-color: rgba(161,171,175,0.31);width: 1000px;height: 1px;left: 0px"/>
-        <hr style="position: absolute;background-color: rgba(161,171,175,0.31);width: 1000px;height: 1px;left: 0px"/>
-        <div class="foot-nav clearfix" style="position: absolute;left: 0px;margin-top: 40px;text-align: center">
-            <div class="foot-copyrights" style="margin-left: 200px">
-                <p>
-                    互联网ICP备案：京ICP备xxxxxx号-1
-                </p>
-                <p>
-                    <span>违法和不良信息举报电话：010-xxxxxxx</span>
-                    <span>邮箱：xxx@dreamland.wang</span>
-                </p>
-                <p style="margin-top: 8px">&copy;www.dreamland.wang 梦境网版权所有</p>
-            </div>
-        </div>
-
-</div>
-
 </div>
 <script type="text/javascript" src="${ctx}/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="${ctx}/css/bootstrap/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="${ctx}/css/zui/js/zui.min.js"></script>
 </body>
 <script language=javascript>
-    function  showImg(){
-        document.getElementById("wxImg").style.display='block';
-    }
-    function hideImg(){
-        document.getElementById("wxImg").style.display='none';
-    }
-
     $("#btn").click(function () {
         location.href="${ctx}/register";
     });

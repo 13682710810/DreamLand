@@ -31,13 +31,22 @@ import java.util.*;
 public class UploadController {
     private final static Logger log = Logger.getLogger(UploadController.class);
 
+    /*
+     * 上传文件失败后返回的map信息
+     * */
+    private Map<String, Object> getError(String message) {
+        Map<String, Object> msg = new HashMap<String, Object>();
+        //失败success设为0
+        msg.put("success",0);
+        //message放的是失败提示
+        msg.put("message", message);
+        return msg;
+    }
+
     @RequestMapping(value = "/fileUpload")
     @ResponseBody
     public Map<String, Object> fileUpload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, FileUploadException {
         ServletContext application = request.getSession().getServletContext();
-        //String savePath = Constants.SERVER_FILE_ROOT;
-        //String saveUrl = Constants.DREAMLAND_DOMAIN + "/images/";
-
         String savePath = application.getRealPath("/") + "images/";
         String saveUrl = request.getContextPath() + "/images/";
         log.info( "上传图片，保存路径为："+savePath+",文件url为："+saveUrl );
@@ -129,13 +138,6 @@ public class UploadController {
             return msg;
             }
         return null;
-    }
-
-    private Map<String, Object> getError(String message) {
-        Map<String, Object> msg = new HashMap<String, Object>();
-        msg.put("success",0);//0失败
-        msg.put("message", message);
-        return msg;
     }
 
     @RequestMapping(value = "/fileManager")

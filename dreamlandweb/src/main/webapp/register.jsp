@@ -143,7 +143,7 @@
             console.log("phoneajax")
             $.ajax({
                 type:'post',
-                url:'checkPhone',
+                url:'${ctx}checkPhone',
                 data: {"phone":phone},
                 dataType:'json',
                 success:function(data){
@@ -244,8 +244,6 @@
             }
             return false;
         }
-
-
         if(flag){
             $("#password_span").text("");
             $("#reg_span").text("");
@@ -257,9 +255,6 @@
             return true;
         }
     }
-
-
-
 
     //邮箱校验
     var e = 0;
@@ -274,22 +269,21 @@
             }
             $("#email_span").text("请输入邮箱账号！");
             $("#email_ok").text("");
-             flag_e = false;
+            flag_e = false;
         }
-        if(false){
+        if(!(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/.test(email))){
             $("#email_span").text("邮箱账号不存在，请重新输入！");
             $("#email_ok").text("");
             if(e==0){
                 increaseHeight();
                 e++;
             }
-             flag_e = false;
+            flag_e = false;
         }else{
             //验证邮箱是否已经注册
-            console.log("emailajax")
             $.ajax({
                 type:'post',
-                url:'checkEmail',
+                url:'${ctx}/checkEmail',
                 data: {"email":email},
                 dataType:'json',
                 success:function(data) {
@@ -311,7 +305,6 @@
                         flag_e = true;
 
                     }else{
-
                         $("#email_span").text("该Email已经注册！");
                         $("#email_ok").text("");
                         var hgt = $("#regist-left").height();
@@ -326,7 +319,6 @@
            });
 
         }
-        console.log("email"+flag_e)
         return flag_e;
     }
 
@@ -353,10 +345,9 @@
             $("#code_span").text("请输入验证码！").css("color","red");
             flag_c = false;
         }else{
-            console.log("codeajax")
             $.ajax({
                 type: 'post',
-                url: 'checkCode',
+                url: '${ctx}/checkCode',
                 data: {"code": code},
                 dataType: 'json',
                 success: function (data) {
@@ -373,7 +364,6 @@
             });
 
         }
-        console.log("code"+flag_c)
         return flag_c;
     }
 

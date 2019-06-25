@@ -87,7 +87,6 @@
     </div>
     <div class="content">
         <div class="single-clear">
-
         </div>
 
         <div class="register-success">
@@ -113,137 +112,13 @@
             2.您可以选择<button style="margin-left: 10px;" class="btn btn-primary" id="reBtn" onclick="reSendEmail('${message}')" type="button">重新发送邮件</button><br/><br/>
             3.邮件地址写错了?抱歉,您需要<button style="margin-left: 10px;" class="btn btn-primary" id="btn" type="button" onclick="reRegist();">重新注册</button><br/><br/>
         </div>
-
     </div>
-
-
-    <div class="foot" style="position: absolute;left: 280px;float: left;">
-        <div class="foot-nav clearfix">
-            <div class="foot-nav-col">
-                <h3>
-                    关于
-                </h3>
-                <ul>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            关于梦境网
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            加入我们
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            联系方式
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot-nav-col">
-                <h3>
-                    帮助
-                </h3>
-                <ul>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            在线反馈
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            用户协议
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="nofollow">
-                            隐私政策
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot-nav-col">
-                <h3>
-                    下载
-                </h3>
-                <ul>
-                    <li>
-                        <a href="#" target="_blank" rel="external nofollow">
-                            Android 客户端
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="external nofollow">
-                            iPhone 客户端
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot-nav-col">
-                <h3>
-                    关注
-                </h3>
-                <ul>
-                    <li>
-                        <a href="http://www.dreamland.wang" onMouseOut="hideImg()"  onmouseover="showImg()">
-                            微信
-                            <div id="wxImg" style="display:none;height:50px;back-ground:#f00;position:absolute;">
-                                <img src="images/dreamland.png"/><br/>
-                                手机扫描二维码关注
-                            </div>
-                            <!-- <div class="foot-wechat-tips">
-                                &lt;!&ndash; <span class="foot-wechat-icon"></span>&ndash;&gt;
-                                 <span class=" icon icon-wechat icon-2x"></span>
-                                 手机扫描二维码关注
-                             </div>-->
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="external nofollow">
-                            新浪微博
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank" rel="external nofollow">
-                            QQ空间
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- rgba(60,63,65,0.31)-->
-        <hr style="position: absolute;background-color: rgba(161,171,175,0.31);width: 1000px;height: 1px;left: 0px"/>
-        <hr style="position: absolute;background-color: rgba(161,171,175,0.31);width: 1000px;height: 1px;left: 0px"/>
-        <div class="foot-nav clearfix" style="position: absolute;left: 0px;margin-top: 40px;text-align: center">
-            <div class="foot-copyrights" style="margin-left: 200px">
-                <p>
-                    互联网ICP备案：京ICP备xxxxxx号-1
-                </p>
-                <p>
-                    <span>违法和不良信息举报电话：010-xxxxxxx</span>
-                    <span>邮箱：xxx@dreamland.wang</span>
-                </p>
-                <p style="margin-top: 8px">&copy;www.dreamland.wang 梦境网版权所有</p>
-            </div>
-        </div>
-
-</div>
-
 </div>
 <script type="text/javascript" src="${ctx}/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="${ctx}/css/bootstrap/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="${ctx}/css/zui/js/zui.min.js"></script>
 </body>
 <script language=javascript>
-    function  showImg(){
-        document.getElementById("wxImg").style.display='block';
-    }
-    function hideImg(){
-        document.getElementById("wxImg").style.display='none';
-    }
-
     function lookEmail(message) {
         var arr = message.split(",");  <!--参数 message 是邮箱和激活码通过 , 号拼接的字符串，根据 , 号切割取出邮箱。-->
         var email = arr[0];
@@ -267,7 +142,7 @@
        var code = arr[1];
         $.ajax({      <!--发送 AJAX 请求，映射 URL 为 /sendEmail，请求参数 data 是邮箱和激活码。-->
             type:'post',
-            url:'/sendEmail',
+            url:'${ctx}/sendEmail',
             data: {"email":email,"validateCode":code},
             dataType:'json',
             success:function(data){
@@ -281,7 +156,7 @@
     }
 
     function reRegist() {
-        location.href = "../dreamlandweb_war/register.jsp";
+        location.href = "../dreamland/register.jsp";
     }
 </script>
 </html>

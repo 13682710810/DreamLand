@@ -143,7 +143,7 @@
             console.log("phoneajax")
             $.ajax({
                 type:'post',
-                url:'checkPhone',
+                url:'${ctx}checkPhone',
                 data: {"phone":phone},
                 dataType:'json',
                 success:function(data){
@@ -244,8 +244,6 @@
             }
             return false;
         }
-
-
         if(flag){
             $("#password_span").text("");
             $("#reg_span").text("");
@@ -257,9 +255,6 @@
             return true;
         }
     }
-
-
-
 
     //邮箱校验
     var e = 0;
@@ -289,7 +284,7 @@
             console.log("emailajax")
             $.ajax({
                 type:'post',
-                url:'checkEmail',
+                url:'${ctx}/checkEmail',
                 data: {"email":email},
                 dataType:'json',
                 success:function(data) {
@@ -353,10 +348,9 @@
             $("#code_span").text("请输入验证码！").css("color","red");
             flag_c = false;
         }else{
-            console.log("codeajax")
             $.ajax({
                 type: 'post',
-                url: 'checkCode',
+                url: '${ctx}/checkCode',
                 data: {"code": code},
                 dataType: 'json',
                 success: function (data) {

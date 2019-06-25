@@ -514,7 +514,7 @@
     function changeImg() {
         var formData = new FormData($( "#upload-form" )[0]);
         $.ajax({
-            url: '/fileUpload' ,
+            url: '${ctx}/fileUpload' ,
             type: 'POST',
             data: formData,
             async: false,
@@ -522,8 +522,8 @@
             contentType: false,
             processData: false,
             success: function (data) {
-                var msg = data["error"];
-                if(msg==0){
+                var msg = data["success"];
+                if(msg==1){
                     //上传成功
                     var url = data["url"];
                     document.getElementById("img-change").src = url;
@@ -538,7 +538,7 @@
         $.ajax({
             type:'post',
             data: {"url":url},
-            url: '/saveImage' ,
+            url: '${ctx}/saveImage' ,
             dataType:'json',
             success: function (data) {
                 new $.zui.Messager('头像保存成功', {
