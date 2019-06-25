@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="dreamland-web">
-    <output-path>$PROJECT_DIR$/out/artifacts/dreamland_web</output-path>
-    <root id="archive" name="dreamland-web.war" />
-  </artifact>
-</component>
